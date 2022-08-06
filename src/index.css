@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap');
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #d2dbdd;
+}
+
+/* .heading{
+    padding: 30px 0;
+    margin-bottom: 30px;
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    font-weight: 500;
+    color: #868686;
+    background-color: #fff;
+} */
+
+.cards{
+width: 100%;
+height: auto;
+
+}
+
+/* Image container */
+.card{
+margin: 6%;
+transition: all 0.4s cubic-bezier(0.175, 0.885, 0, 1);
+background-color: #fff;
+width: 21.25%;
+border-radius: 12px;
+box-shadow: 0px 13px 10px -7px rgba(0, 0, 0, 1);
+float: left;
+}
+
+.card:hover{
+    box-shadow: 0px 30px 18px -8px rgba(0, 0, 0, 1);
+    transform: scale(1.2, 1.2);
+}
+.card_img{
+    height: 235px;
+    width: 100%;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    /* border: 2px solid greenyellow; */
+}
+
+.card_info{
+    background-color: #fff;
+    padding: 16px 24px 24px 24px;
+    border-bottom-right-radius: 12px;
+    border-bottom-left-radius: 12px;
+}
+
+
+/* h3 heading */
+.card_name{
+    font-family: 'Raleway', sans-serif;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    background-color: #fff;
+    text-transform: capitalize;
+}
+
+.card_info button{
+    padding: 7px 5px;
+    margin: 3px 5px;
+    text-transform: uppercase;
+    font-family: 'Raleway', sans-serif;
+    font-size: 15px;
+    letter-spacing: 2px;
+    font-weight: 500;
+    color: #868686;
+    background-color: #fff;
+    outline: none;
+    border: 1px solid rgb(62, 166, 255);
+    cursor: pointer;
+}
+
+
+@media(min-width: 1200px){
+
+}
+@media(max-width: 990px){
+
+}
+@media(max-width: 800px){
+
+}
+@media(max-width: 600px){
+
+}
+@media(max-width: 480px){
+
+}
+
