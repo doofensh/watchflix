@@ -3,6 +3,7 @@ import { img_300, unavailable } from '../../conflg/config'
 import "./SingleContent.css";
 // import CustomPagination from '../Pagination/CustomPagination';
 import Badge from '@mui/material/Badge';
+import ContentModal from '../ContentModal/ContentModal';
 
 const SingleContent = ({
         id,
@@ -15,7 +16,7 @@ const SingleContent = ({
 
     return (
         <>
-            <div className='media'>
+            <ContentModal >
                 <Badge 
                 badgeContent={vote_average}
                 color={vote_average > 6 ? 'primary' : 'secondary'}                    
@@ -26,7 +27,7 @@ const SingleContent = ({
                     <span className='subTitle'>{date}</span>
                 </span>
 
-            </div>
+            </ContentModal>
             {/* <CustomPagination /> */}
         </>
     )
