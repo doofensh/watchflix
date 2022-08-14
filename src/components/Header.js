@@ -7,7 +7,7 @@ const Header = () => {
         <>
 
             <div className='head'>
-                <span className='header'>MeraFlix</span>
+                <span className='header'>Watchflix</span>
             </div>
             {/* <div >
 

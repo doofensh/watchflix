@@ -10,7 +10,7 @@ import { useState, useEffect } from 'react'
 import { Button } from '@mui/material';
 import CustomPagination from '../../components/Pagination/CustomPagination'
 import SingleContent from '../../components/SingleContent/SingleContent'
-// import { ThemeProvider } from '@mui/system';
+// import { createTheme, ThemeProvider } from '@mui/system';
 
 const Search = () => {
 
@@ -30,17 +30,13 @@ const Search = () => {
     // });
 
     const fetchSearch = async () => {
-        // try {
-            const { data } = await axios.get(
-                `https://api.themoviedb.org/3/search/${type ? "tv" : "movie"}?api_key=658a147237a83583b2f1a3512e81784d&language=en-US&query=${searchText}&page=${page}&include_adult=false`
-            );
+        const { data } = await axios.get(
+            `https://api.themoviedb.org/3/search/${type ? "tv" : "movie"}?api_key=658a147237a83583b2f1a3512e81784d&language=en-US&query=${searchText}&page=${page}&include_adult=false`
+        );
 
-            setContent(data.results);
-            setNumOfPages(data.total_pages);
-            // console.log(data);
-        // } catch (error) {
-        //     console.error(error);
-        // }
+        setContent(data.results);
+        setNumOfPages(data.total_pages);
+        // console.log(data);       
     };
 
     useEffect(() => {
@@ -52,42 +48,43 @@ const Search = () => {
     return (
         <div>
             {/* <ThemeProvider theme={darkTheme}> */}
-            {/* <div style={{display:"flex", margin: "15px 0"}}></div> */}
-            <span className="pageTitle">Search</span>
+            {/* <div style={{ display: "flex", margin: "15px 0" }}> </div>*/}
+                <span className="pageTitle">Search</span>
 
 
-            <div className="search" style={{display:"flex", margin: "15px 0"}}>
-                <TextField
-                    style={{ flex: 1 }}
-                    className="searchBox"
-                    label="Search"
-                    variant="filled"
-                    onChange={(e) => setSearchText(e.target.value)}
-                />
-                <Button
-                    variant="contained"
-                    style={{ marginLeft: 10 }}
-                    onClick={fetchSearch}
-                >
-                    <SearchIcon fontSize="large" />
-                </Button>
-            </div>
-            <Tabs
-                value={type}
-                indicatorColor="primary"
-                textColor="primary"
-                onChange={(event, newValue) => {
-                    setType(newValue);
-                    setPage(1);
-                }}
-                style={{ paddingBottom: 5 }}
+                <div className="search" style={{ display: "flex", margin: "15px 0" }}>
+                    <TextField
+                        style={{ flex: 1 }}
+                        className="searchBox"
+                        label="Search"
+                        variant="filled"
+                        onChange={(e) => setSearchText(e.target.value)}
+                    />
+                    <Button
+                        variant='contained'
+                        style={{ marginLeft: 10 }}
+                        onClick={fetchSearch}
+                    >
+                        <SearchIcon fontSize="large" />
+                    </Button>
+                </div>
+                <Tabs
+                    value={type}
+                    indicatorColor="primary"
+                    textColor="primary"
+                    onChange={(event, newValue) => {
+                        setType(newValue);
+                        setPage(1);
+                    }}
+                    style={{ paddingBottom: 5 }}
                 // aria-label="disabled tabs example"
-            >
-                <Tab style={{ width: "50%" }} label="Search Movies" />
-                <Tab style={{ width: "50%" }} label="Search TV Series" />
-            </Tabs>
+                >
+                    <Tab style={{ width: "50%" }} label="Search Movies" />
+                    <Tab style={{ width: "50%" }} label="Search TV Series" />
+                </Tabs>
+
             {/* </ThemeProvider> */}
-            
+
             <div className="trending">
                 {content &&
                     content.map((c) => (
@@ -103,14 +100,14 @@ const Search = () => {
                     ))}
                 {searchText &&
                     !content &&
-                    (type ? <h2>No Series Found</h2> : <h2>No Movies Found</h2>)}
+                    (type ? <h5>No Series Found</h5> : <h4>No Movies Found</h4>)}
             </div>
             {numOfPages > 1 && (
                 <CustomPagination setPage={setPage} numOfPages={numOfPages} />
             )}
 
         </div>
-    )
-}
+    );
+};
 
 export default Search;

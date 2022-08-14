@@ -16,7 +16,7 @@ const Trending = () => {
         const { data } = await axios.get(
             `https://api.themoviedb.org/3/trending/all/day?api_key=658a147237a83583b2f1a3512e81784d&page=${page}`
         );
-        console.log("hello");
+        // console.log("hello");
         //     console.log(data);
         setContent(data.results);
     };

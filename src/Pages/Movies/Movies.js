@@ -11,8 +11,8 @@ const Movies = () => {
     const [content, setContent] = useState([]);
     const [numOfPage, setNumPages] = useState(1);
 
-    const[selectedGenres, setSelectedGenres] = useState([]);
-    const[genres, setGenres] = useState([]);
+    const [selectedGenres, setSelectedGenres] = useState([]);
+    const [genres, setGenres] = useState([]);
 
     const genreforURL = useGenres(selectedGenres);
 
@@ -61,7 +61,7 @@ const Movies = () => {
                         )
                     }
                 </div>
-                {                
+                {
                     numOfPage > 1 && (<CustomPagination setPage={setPage} numOfPages={numOfPage} />)
                 }
 
